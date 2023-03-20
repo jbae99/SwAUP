@@ -11,7 +11,8 @@ let db = new sqlite3.Database('depaup.db', sqlite3.OPEN_READWRITE, (err) => {
       console.error(err.message);
     };
     console.log('Connected to the DepAUP database.');
-  });
+  }
+);
 
 http.createServer((req, res) => {
 

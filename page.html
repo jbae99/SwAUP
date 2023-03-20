@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="pageStyles.css">
+    <link href="https://fonts.cdnfonts.com/css/bauhaus-93" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <title>SwAUP</title>
+</head>
+
+<body>
+    <nav id="nav-bar">
+    
+            <div><a class="active" href="page.html">Home</a></div>
+            <div><a href="about.html">About</a></div>
+            <div><a href="post.html">Post Something</a></div>
+            <div class="search-bar">
+                <form>
+                    <input id="search" type="text" placeholder="Search...">
+                    <button style="background-color: aliceblue;color: black;" type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="login">
+                <a href="#">Log In</a>
+            </div>
+
+    </nav>
+
+
+    <div class="sidebar">
+        <br>
+        <h3>What are you looking for?</h3>
+        <label>
+            <input type="radio" name="sidebar-nav" value="Clothing">
+            Clothing
+        </label>
+        <label>
+            <input type="radio" name="sidebar-nav" value="Household Goods">
+            Household Goods
+        </label>
+        <label>
+            <input type="radio" name="sidebar-nav" value="Information">
+            Information
+        </label>
+        <div id="optionsClothes" style="display:none;">
+            <select id="Select from below">
+                <option value="1">Choose from below:</option>
+                <option value="2">Shirts</option>
+                <option value="3">Bottoms</option>
+                <option value="4">Shoes</option>
+                <option value="5">Accesories</option>
+            </select>
+        </div>
+        <div id="optionsHouse" style="display:none;">
+            <select id="Select from below">
+                <option value="1">Choose from below:</option>
+                <option value="2">Kitchen things</option>
+                <option value="3">Appliance</option>
+                <option value="4">Bedding</option>
+            </select>
+        </div>
+        <div id="optionsInfo" style="display:none;">
+            <select id="Select from below">
+                <option value="1">Choose from below:</option>
+                <option value="2">New thrift shops</option>
+                <option value="3">General news</option>
+                <option value="4">Other</option>
+            </select>
+        </div>
+    </div>
+    <div class="content">
+        <h1 id="homeHeading">swAUP</h1>
+        <p>Dying to emulate your favorite style icon in class or find free versions of next semester’s textbooks? </p>
+
+        <p> Itching to unload extra clutter or that one sweater you just can’t find a way to style? </p>
+
+        <p> Get rid of unnecessary or outdated items and swAUP them with your fellow AUP students to make shopping more
+            sustainable for the planet and your wallet! </p>
+    </div>
+
+    <div class="upcoming-events">
+        <h3>Upcoming events:</h3>
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Date</th>
+                <th>Location</th>
+            </tr>
+            <tr>
+                <td>Event 1</td>
+                <td>April 1, 2023</td>
+                <td>Room 101</td>
+            </tr>
+            <tr>
+                <td>Event 2</td>
+                <td>May 15, 2023</td>
+                <td>Room 102</td>
+            </tr>
+        </table>
+        <div class="posts">
+
+        </div>
+    </div>
+
+
+
+    <script>
+        var radios = document.getElementsByName("sidebar-nav");
+        for (var i = 0; i < radios.length; i++) {
+            radios[i].addEventListener('click', function () {
+                var options = document.getElementById("options");
+                if (this.checked && (this.value === "Clothing")) {
+                    optionsClothes.style.display = "block";
+                    optionsHouse.style.display = 'none';
+                    optionsInfo.style.display = 'none';
+                } else if (this.checked && (this.value === "Household Goods")) {
+                    optionsHouse.style.display = "block";
+                    optionsInfo.style.display = 'none';
+                    optionsClothes.style.display = 'none';
+                } else if (this.checked && (this.value === "Information")) {
+                    optionsInfo.style.display = "block";
+                    optionsHouse.style.display = 'none';
+                    optionsClothes.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

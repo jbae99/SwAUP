@@ -13,8 +13,8 @@
     
 </body>
 <script>
-    $("#main_button").click(function(){
-        $.get("http://localhost:3000/?aup_id=a108643", function(data, status){
+    $("#main_button").click(() => {
+        $.get("http://localhost:3000/?aup_id=a108643", (data, status) => {
             obj = JSON.parse(data);
             console.log(obj);
             $("#search_results").text(obj.nickname);

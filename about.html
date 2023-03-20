@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="page.css">
+    <title>SwAUP</title>
+</head>
+
+<body>
+    <nav id="nav-bar">
+        <ul>
+            <li><a href="page.html">Home</a></li>
+            <li ><a class="active" href="about.html">About</a></li>
+            <li><a href="post.html">Post Something</a></li>
+            <li class="search-bar">
+                <form>
+                    <input id="search" type="text" placeholder="Search...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </li>
+            <li class="login">
+                <a href="#">Log In</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="sidebar">
+        <br>
+        <h3>What are you looking for?</h3>
+        <label>
+            <input type="radio" name="sidebar-nav" value="Clothing">
+            Clothing
+        </label>
+        <label>
+            <input type="radio" name="sidebar-nav" value="Household Goods">
+            Household Goods
+        </label>
+        <label>
+            <input type="radio" name="sidebar-nav" value="Information">
+            Information
+        </label>
+        <div id="optionsClothes" style="display:none;">
+            <select id="Select from below">
+                <option value="1">Choose from below:</option>
+                <option value="2">Shirts</option>
+                <option value="3">Bottoms</option>
+                <option value="4">Shoes</option>
+                <option value="5">Accesories</option>
+            </select>
+        </div>
+        <div id="optionsHouse" style="display:none;">
+            <select id="Select from below">
+                <option value="1">Choose from below:</option>
+                <option value="2">Kitchen things</option>
+                <option value="3">Appliance</option>
+                <option value="4">Bedding</option>
+            </select>
+        </div>
+        <div id="optionsInfo" style="display:none;">
+            <select id="Select from below">
+                <option value="1">Choose from below:</option>
+                <option value="2">New thrift shops</option>
+                <option value="3">General news</option>
+                <option value="4">Other</option>
+            </select>
+        </div>
+    </div>
+    <div class="content">
+        <h1>Welcome to SwAUP</h1>
+        <p>Our goal is to create an inter-university community of item and information swapping to reduce our carbon
+            footprint</p>
+    </div>
+
+
+
+    <script>
+        var radios = document.getElementsByName("sidebar-nav");
+        for (var i = 0; i < radios.length; i++) {
+            radios[i].addEventListener('click', function () {
+                var options = document.getElementById("options");
+                if (this.checked && (this.value === "Clothing")) {
+                    optionsClothes.style.display = "block";
+                    optionsHouse.style.display = 'none';
+                    optionsInfo.style.display = 'none';
+                } else if (this.checked && (this.value === "Household Goods")) {
+                    optionsHouse.style.display = "block";
+                    optionsInfo.style.display = 'none';
+                    optionsClothes.style.display = 'none';
+                } else if (this.checked && (this.value === "Information")) {
+                    optionsInfo.style.display = "block";
+                    optionsHouse.style.display = 'none';
+                    optionsClothes.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
